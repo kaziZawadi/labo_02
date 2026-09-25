@@ -1,0 +1,52 @@
+Labo02 - Calcul du temps de trajet
+
+Objectif
+Écrire un algorithme en pseudo code et le traduire en code C++.
+Utiliser les types, les formules et les opérations mathématiques de C++.
+---------------------------------------------------------------------------
+Pseudo_Code
+
+Entrées :   - const double distance_dx = 3;     // distance en km parcourue par le robot sur le terrain rocheux
+            - const double distance_dy = 10;    // Plus grande distance en km parcourable sur la route
+            - const double vitesse_S1 = 5;      // vitesse (km/h) sur la route
+            - const double vitesse_s2 = 2;      // vitesse (km/h) sur le terrain rocheux
+
+            - double distance_L1 = 6;           // distance parcourue par le robot sur la route
+
+ Sortie :   - double temps_t1 = 0;              // temps (heure) que met le robot pour parcourir le segment 1 (L1)
+            - double temps_t2 = 0;              // temps (heure) que met le robot pour parcourir le segment 2 (L2)
+            - double temps_Total = 0;           // temps total (heure) que met le robot pour parcourir les deux segments
+
+-----------------------------
+
+Programme
+
+1) Message de bienvenue sur le programme
+
+2) Calculer le temps que met le robot pour parcourir la distance L1.
+
+    2.1) temps_t1 = distance_L1 / vitesse_s1;
+
+3) Calculer le temps que met le robot pour parcourir la distance du segment L2.
+
+    3.1) Calculer la distance L2
+        3.1.1) distance_L2 = distance_dy -distance_L1
+
+    3.2) Calcul du temps du segment L2
+        3.2.1) temps_t2 = distance_L2 / vitesse_s2
+
+4) Calculer le temps total pour parcourir L1 + L2
+
+    4.1) temps_total = temps_t1 + temps_t2
+
+5) Afficher le résultat obtenu
+
+    5.1) Vérifier que le résultat est au format demandé (heure)
+        5.1.1) sinon convertir le résultat au format heure
+
+    5.2) Afficher le résultat
+        5.2.1) Afficher un message incluant le résultat
+
+6) Fermer le programme
+
+       6.1) Afficher un message de fermeture
