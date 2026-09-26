@@ -48,12 +48,13 @@ Programme
 
                 5.1.2.1) - Garder la partie entière du résultat, qui correspond aux heures complètes
                             1) convertir le résultat de type double en type int (2,5h => 2)
-                            2) stocker le résultat dans une variable nommée "heure".
+                            2) stocker le résultat dans une variable de type int.
 
                          - Calcul des minutes
                          4) Prendre à nouveau le résultat initial de type double et multiplier par 60
-                         5) Faire le modulo du résultat ainsi obtenu
-                         6) Stocker le modulo dans une variable nommée "minutes"
+                         5) caster le résultat en type int (l'opérateur modulo ne fonctionne que pour les int !)
+                         5) Faire modulo 60 sur le résultat obtenu
+                         6) Stocker le modulo dans une variable de type double.
 
     5.2) Afficher le résultat
         5.2.1) Afficher un message incluant le résultat
