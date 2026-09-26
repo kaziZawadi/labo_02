@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> // std::cout, std::boolalpha, std::noboolalpha
 #include <cmath>
 
 /* ---------------------------
@@ -42,17 +42,17 @@ int main() {
 
     cote_B = distance_dy - distance_L1;
     // POUR LE BONUS
-    /*std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
+    std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
     std::cout <<"Entrez un nombre entre 0 et " << cote_B << " : " << std::endl;
-    std::cin >> saisie_cote_B;*/
+    std::cin >> saisie_cote_B;
 
     //POUR LE BONUS test de la saisie : il doit être compris entre 0 et le résultat de cote_B (Pas trouvé comment faire, sans boucle)
-    /*double bon_cote_B = 0;
+    double bon_cote_B = 0;
     bon_cote_B = (saisie_cote_B >= 0) && (saisie_cote_B < cote_B);
-    std::cout << bon_cote_B << std::endl;*/
+    std::cout << std::boolalpha << bon_cote_B << std::endl;
 
-    distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
-    // distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
+    // distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
+    distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
     temps_t2 = distance_L2 / vitesse_s2;
 
     // calcul du temps total
