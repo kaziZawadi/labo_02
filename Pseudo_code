@@ -39,6 +39,19 @@ Programme
 
     4.1) temps_total = temps_t1 + temps_t2
 
+4.1) POUR LE BONUS
+     Données: Modifier le programme pour prendre en entrée la distance à parcourir sur la route (L1)
+              afin de tester et deviner la distance qui permet de récupérer l'objet le plus rapidement possible !
+
+     => Le robot va plus vite sur la route. Donc il doit avancer plus sur la route.
+        La distance L1 doit plus grand que le côté B du triangle
+
+     4.1.1) Rendre possible de modifier la distance du côté B du triangle.
+            - Permettre à l'utilisateur de saisir un nombre entier positif plus petit que le résultat obtenu
+              par le calcul : distance_dy -distance_L1) pour le côté B.
+            - Comment s'assurer qu'il a bien saisi un nombre, qu'il est entier positif et plus petit
+              que le résultat du calcul précédent, sans utiliser de boucles et autres !!
+
 5) Afficher le résultat obtenu
 
     5.1) Vérifier que le résultat est au format demandé (heure)
@@ -54,7 +67,6 @@ Programme
                          4) Prendre à nouveau le résultat initial de type double et multiplier par 60
                          5) caster le résultat en type int (l'opérateur modulo ne fonctionne que pour les int !)
                          5) Faire modulo 60 sur le résultat obtenu
-                         6) Stocker le modulo dans une variable de type double.
 
     5.2) Afficher le résultat
         5.2.1) Afficher un message incluant le résultat

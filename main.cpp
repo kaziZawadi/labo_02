@@ -27,7 +27,7 @@ int main() {
 
     // Début programme
     std::cout << "Ce programme sert à calcul le temps mit par un robot "
-                 "pour récupérer un objet distant." << std::endl;
+                 "pour récupérer un objet distant." << std::endl << std::endl;
 
     // calculs
     //////////////////////////////////////////////////////////
@@ -42,8 +42,18 @@ int main() {
     // calcul de la distance_L2,
     // soit l'hypoténuse du triangle rectangle dx=A, dy-L1=B, L2=C)
     double cote_B = 0;
+    double saisie_cote_B = 0; // POUR BONUS
+
     cote_B = distance_dy - distance_L1;
-    distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
+    // POUR LE BONUS
+    std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
+    std::cout <<"Entrez un nombre plus petit que : " << cote_B << std::endl;
+    std::cin >> saisie_cote_B;
+    std::cout << saisie_cote_B << std::endl;
+
+    std::cout << cote_B << std::endl;
+    //distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
+    distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
     temps_t2 = distance_L2 / vitesse_s2;
 
     // calcul du temps total
