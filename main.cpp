@@ -56,18 +56,12 @@ int main() {
     std::cout << temps_Total << std::endl;
 
     // conversion du résultat au format heure, minutes
-    int heures_Entieres = 0;
-    heures_Entieres = static_cast<int>(temps_Total);
+    double resultat_en_minutes = temps_Total * nb_minutes_dans_une_heure;
+    std::cout << resultat_en_minutes << std::endl;
 
-    std::cout << heures_Entieres << std::endl;
-
-    int minutes_restantes = 0;
-    minutes_restantes = static_cast<int>(temps_Total) * nb_minutes_dans_une_heure;
-
-    //std::cout << minutes_restantes << std::endl;
-
-   /* std::cout << "temps_Total pour récupérer l'objet : " << heures_Entieres  << " h "
-    << minutes_restantes << std::endl;*/
+    // récupération des heures entières
+    int heure_entieres = static_cast<int>(resultat_en_minutes) % nb_minutes_dans_une_heure;
+    std::cout << heure_entieres << std::endl;
 
 
     return 0;
