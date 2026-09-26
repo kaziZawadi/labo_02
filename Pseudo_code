@@ -46,11 +46,13 @@ Programme
             5.1.2) Par exemple si résultat : 2.5 h => (1 h = 60 minutes)
                     résultat attendu après conversion : 2h30
 
-                5.1.2.1) 1) Garder la partie entière du résultat, qui correspond aux heures complètes
-                         2) convertir le résultat de type double en type int (2,5h => 2)
-                         3) stocker le résultat dans une variable nommée "heure".
-                         4) Prendre à nouveau 2.5 double et multiplier par 60
-                         5) Faire le modulo du resultat obtenu
+                5.1.2.1) - Garder la partie entière du résultat, qui correspond aux heures complètes
+                            1) convertir le résultat de type double en type int (2,5h => 2)
+                            2) stocker le résultat dans une variable nommée "heure".
+
+                         - Calcul des minutes
+                         4) Prendre à nouveau le résultat initial de type double et multiplier par 60
+                         5) Faire le modulo du résultat ainsi obtenu
                          6) Stocker le modulo dans une variable nommée "minutes"
 
     5.2) Afficher le résultat

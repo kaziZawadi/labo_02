@@ -34,6 +34,9 @@ int main() {
     distance_L2 = distance_dy - distance_L1;
     temps_t2 = distance_L2 / vitesse_s2;
 
+    // conversion du résultat au format heure, minutes
+
+
     // affichage du résultat final
     double temps_Total = 0;
     temps_Total = temps_t1 + temps_t2;
