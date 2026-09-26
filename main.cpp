@@ -63,10 +63,12 @@ int main() {
     // récupération des minutes
     double resultat_en_minutes = temps_Total * nb_minutes_dans_une_heure;
     std::cout << resultat_en_minutes << std::endl;
-    int heure_entieres = static_cast<int>(resultat_en_minutes) % nb_minutes_dans_une_heure;
-    std::cout << heure_entieres << std::endl;
+    int minutes_restantes = static_cast<int>(resultat_en_minutes) % nb_minutes_dans_une_heure;
+    std::cout << minutes_restantes << std::endl;
 
     // affichage du temps total
+    std::cout << "Temps total du robot pour atteindre l'objet : "
+    << heures_entieres << " h " << minutes_restantes << std::endl;
 
 
     return 0;
