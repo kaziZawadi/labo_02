@@ -52,7 +52,7 @@ int main() {
 
     // test de la saisie : il doit être compris entre 0 et le résultat de cote_B
     double bon_cote_B = 0;
-    bon_cote_B = (saisie_cote_B > 0) && (saisie_cote_B < cote_B);
+    bon_cote_B = (saisie_cote_B >= 0) && (saisie_cote_B < cote_B);
     std::cout << bon_cote_B << std::endl;
 
     //distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
