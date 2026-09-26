@@ -43,9 +43,20 @@ Programme
 
     5.1) Vérifier que le résultat est au format demandé (heure)
         5.1.1) sinon convertir le résultat au format heure
+            5.1.2) Par exemple si résultat : 2.5 h => (1 h = 60 minutes)
+                    résultat attendu après conversion : 2h30
+
+                5.1.2.1) 1) Garder la partie entière du résultat, qui correspond aux heures complètes
+                         2) convertir le résultat de type double en type int (2,5h => 2)
+                         3) stocker le résultat dans une variable nommée "heure".
+                         4) Prendre à nouveau 2.5 double et multiplier par 60
+                         5) Faire le modulo du resultat obtenu
+                         6) Stocker le modulo dans une variable nommée "minutes"
 
     5.2) Afficher le résultat
         5.2.1) Afficher un message incluant le résultat
+                - "temps total pour récupérer l'objet : contenu de variable heure
+                   + contenu de variable minutes"
 
 6) Fermer le programme
 
