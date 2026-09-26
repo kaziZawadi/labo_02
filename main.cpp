@@ -28,6 +28,8 @@ int main() {
     std::cout << "Bienvenue à mon programme de calcul du temps de trajet,"
                  " du robot pour aller chercher un objet." << std::endl;
 
+    // calculs
+    //////////////////////////////////////////////////////////
     // calcul du temps pour le segment 1 (L1)
     double temps_t1 = 0;
     temps_t1 = distance_L1 / vitesse_s1;
@@ -45,23 +47,26 @@ int main() {
     distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
     std::cout << distance_L2 << std::endl;
 
-
-
     temps_t2 = distance_L2 / vitesse_s2;
     std::cout << temps_t2 << std::endl;
 
-    // affichage du résultat final
+    // calcul du temps total
     double temps_Total = 0;
     temps_Total = temps_t1 + temps_t2;
     std::cout << temps_Total << std::endl;
 
     // conversion du résultat au format heure, minutes
+    int heures_entieres = 0;
+    heures_entieres = static_cast<int>(temps_Total);
+    std::cout << heures_entieres << std::endl;
+
+    // récupération des minutes
     double resultat_en_minutes = temps_Total * nb_minutes_dans_une_heure;
     std::cout << resultat_en_minutes << std::endl;
-
-    // récupération des heures entières
     int heure_entieres = static_cast<int>(resultat_en_minutes) % nb_minutes_dans_une_heure;
     std::cout << heure_entieres << std::endl;
+
+    // affichage du temps total
 
 
     return 0;
