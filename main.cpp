@@ -3,20 +3,16 @@
 
 /* ---------------------------
 Laboratoire : 02
-Auteur(s) :
-Date :
+Auteur(s) : Joseph Maro
+Date : 26.09.2026
 But : Calcul du temps de trajet
 Remarque(s) :
 --------------------------- */
 
-/**
- *
- * @return
- */
-
 int main() {
 
     // entrées
+    /////////////////////////////////////////////////////////////
     const int nb_minutes_dans_une_heure = 60;
     const double distance_dx = 3, distance_dy = 10;     /* dx, la distance(km) sur la route.
                                                            dy, la distance (km) sur le terrain rocheux */
@@ -26,7 +22,7 @@ int main() {
 
 
     // Début programme
-    std::cout << "Ce programme sert à calcul le temps mit par un robot "
+    std::cout << "Ce programme calcule le temps que met un robot "
                  "pour récupérer un objet distant." << std::endl << std::endl;
 
     // calculs
@@ -46,17 +42,17 @@ int main() {
 
     cote_B = distance_dy - distance_L1;
     // POUR LE BONUS
-    std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
+    /*std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
     std::cout <<"Entrez un nombre entre 0 et " << cote_B << " : " << std::endl;
-    std::cin >> saisie_cote_B;
+    std::cin >> saisie_cote_B;*/
 
-    // test de la saisie : il doit être compris entre 0 et le résultat de cote_B
-    double bon_cote_B = 0;
+    //POUR LE BONUS test de la saisie : il doit être compris entre 0 et le résultat de cote_B (Pas trouvé comment faire, sans boucle)
+    /*double bon_cote_B = 0;
     bon_cote_B = (saisie_cote_B >= 0) && (saisie_cote_B < cote_B);
-    std::cout << bon_cote_B << std::endl;
+    std::cout << bon_cote_B << std::endl;*/
 
-    //distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
-    distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
+    distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
+    // distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
     temps_t2 = distance_L2 / vitesse_s2;
 
     // calcul du temps total
@@ -72,9 +68,11 @@ int main() {
 
     // affichage du résultat
     /////////////////////////////////////////////////////////////////
-    std::cout << "Temps total du robot pour atteindre l'objet : "
-    << heures_entieres << " h " << minutes_restantes << std::endl;
+    std::cout << "Temps total : "
+    << heures_entieres << " h " << minutes_restantes << std::endl << std::endl;
 
+    std::cout << "Merci d'avoir utiliser mon programme. À bientôt!" << std::endl;
 
     return 0;
+    // Fin du programme
 }
