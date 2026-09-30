@@ -1,6 +1,8 @@
 #include <iostream> // std::cout, std::boolalpha, std::noboolalpha
 #include <cmath>
 
+using namespace std;
+
 /* ---------------------------
 Laboratoire : 02
 Auteur(s) : Joseph Maro
@@ -14,65 +16,65 @@ int main() {
     // entrées
     /////////////////////////////////////////////////////////////
     const int nb_minutes_dans_une_heure = 60;
-    const double distance_dx = 3, distance_dy = 10;     /* dx, la distance(km) sur la route.
+    const double distance_dx = 3.0, distance_dy = 10.0;     /* dx, la distance(km) sur la route.
                                                            dy, la distance (km) sur le terrain rocheux */
-    const double vitesse_s1 = 5, vitesse_s2 = 2;        /* s1 = la vitesse (km/h) sur la route.
+    const double vitesse_s1 = 5.0, vitesse_s2 = 2.0;        /* s1 = la vitesse (km/h) sur la route.
                                                            s2 = la vitesse (km/h) sur le terrain rocheux */
-    double distance_L1 = 6;                             // La distance parcourue par le robot sur la route
+    double distance_L1 = 6.0;                             // La distance parcourue par le robot sur la route
 
 
     // Début programme
-    std::cout << "Ce programme calcule le temps que met un robot "
-                 "pour récupérer un objet distant." << std::endl << std::endl;
+    cout << "Ce programme calcule le temps que met un robot\n"
+                 "pour récupérer un objet distant." << endl << endl;
 
     // calculs
     //////////////////////////////////////////////////////////
     // calcul du temps pour le segment 1 (L1)
-    double temps_t1 = 0;
-    temps_t1 = distance_L1 / vitesse_s1;
-
-    // calcul du temps pour le segment 2 (L2)
-    double distance_L2 = 0;
-    double temps_t2 = 0;
+    double temps_t1 = distance_L1 / vitesse_s1;
 
     // calcul de la distance_L2,
     // soit l'hypoténuse du triangle rectangle dx=A, dy-L1=B, L2=C)
-    double cote_B = 0;
-    double saisie_cote_B = 0; // POUR BONUS
+    double cote_B = distance_dy - distance_L1;
 
-    cote_B = distance_dy - distance_L1;
-    // POUR LE BONUS
-    std::cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << std::endl;
-    std::cout <<"Entrez un nombre entre 0 et " << cote_B << " : " << std::endl;
-    std::cin >> saisie_cote_B;
+    // CODE POUR LE BONUS
+    /*double saisie_cote_B = 0.0; // POUR BONUS
+    cout << "Maintenant, devinons quelle distance permettra d'atteindre l'objet le plus vite possible !" << endl;
+    cout <<"Entrez un nombre entre 0 et " << cote_B << " : " << endl;
+    cin >> saisie_cote_B;*/
 
-    //POUR LE BONUS test de la saisie : il doit être compris entre 0 et le résultat de cote_B (Pas trouvé comment faire, sans boucle)
-    double bon_cote_B = 0;
-    bon_cote_B = (saisie_cote_B >= 0) && (saisie_cote_B < cote_B);
-    std::cout << std::boolalpha << bon_cote_B << std::endl;
+    //CODE POUR LE BONUS test de la saisie : il doit être compris entre 0 et le résultat de cote_B
+    //(Pas trouvé comment faire, sans boucle)
+    /*double bon_cote_B = (saisie_cote_B >= 0) && (saisie_cote_B < cote_B);
+    cout << boolalpha << bon_cote_B << endl; // Mon boolalpha ne fonctionne pas ici: J'ai la valeur "1" au lieu "true" !*/
 
-    // distance_L2 = std::sqrt(distance_dx * distance_dx + cote_B * cote_B);
-    distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); // POUR LE BONUS
-    temps_t2 = distance_L2 / vitesse_s2;
+    const double distance_L2 = hypot(cote_B, distance_dx);
+    // cout << distance_L2 << endl;//test
+    // const double distance_L2 = std::sqrt(distance_dx * distance_dx + saisie_cote_B * saisie_cote_B); //CODE POUR LE BONUS
+    const double temps_t2 = distance_L2 / vitesse_s2;
+    // cout << temps_t2 << endl;//test
 
     // calcul du temps total
-    double temps_Total = 0;
+    double temps_Total = 0.0;
     temps_Total = temps_t1 + temps_t2;
+    // cout << temps_Total << endl; //test
 
     // conversion du résultat au format heure, minutes
-    int heures_entieres = 0;
-    heures_entieres = static_cast<int>(temps_Total);
+    // récupération des heures complètes
+    int heures_entieres = static_cast<int>(temps_Total);
 
-    double resultat_en_minutes = temps_Total * nb_minutes_dans_une_heure;
-    int minutes_restantes = static_cast<int>(resultat_en_minutes) % nb_minutes_dans_une_heure;
+    // récupération des minutes restantes
+    double conversion_temps_Total_en_int = temps_Total * nb_minutes_dans_une_heure; // 3.7 * 60 = 222 minutes
+    // cout << conversion_temps_Total_en_int << endl;
+    int minutes_restantes = static_cast<int>(conversion_temps_Total_en_int) % nb_minutes_dans_une_heure;
+    // cout << minutes_restantes << endl;
 
     // affichage du résultat
     /////////////////////////////////////////////////////////////////
-    std::cout << "Temps total : "
-    << heures_entieres << " h " << minutes_restantes << std::endl << std::endl;
 
-    std::cout << "Merci d'avoir utiliser mon programme. À bientôt!" << std::endl;
+    cout << "Temps total : "
+    << heures_entieres << " h " << minutes_restantes << endl << endl;
+    cout << "Merci d'avoir utiliser mon programme.\nÀ bientôt!" << endl;
 
-    return 0;
+    return EXIT_SUCCESS;
     // Fin du programme
 }
